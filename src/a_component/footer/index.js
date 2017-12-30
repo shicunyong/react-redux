@@ -13,7 +13,7 @@ class Footer extends React.Component {
     render() {
         return (
             <div className="footer">
-                © 2017 <a href="http://isluo.com" target="_blank" rel="noopener noreferrer">isluo.com</a>, Inc.
+                © 2017 <a href="http://baidu.com" target="_blank" rel="noopener noreferrer">baidu.com</a>, Inc.
             </div>
         );
     }

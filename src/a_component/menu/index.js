@@ -21,7 +21,7 @@ class Menu extends React.Component {
                 <NavLink to="/home">首页</NavLink>|
                 <NavLink to="/features">构建与特性</NavLink>|
                 <NavLink to={{ pathname: '/test', search: '?a=123&b=abc', state: { c: '456', d: 'ABC'} }}>测试页面</NavLink>|
-                <a href="https://github.com/javaLuo/react-luo" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://github.com/shicunyong/react-redux" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
         );
     }
