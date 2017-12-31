@@ -8,22 +8,22 @@ import { bindActionCreators } from 'redux';
 import createHistory from 'history/createHashHistory';        // 锚点模式的history
 
 // /** 下面是代码分割异步加载的例子 **/
-// import Bundle from '../../a_component/bundle';                          // 异步加载高阶组件
-// import lazeHome from 'bundle-loader?lazy&name=home!../home';            // 首页
-// import lazeFeatures from 'bundle-loader?lazy&name=features!../features';// 说明页
-// import lazeTest from 'bundle-loader?lazy&name=test!../test';            // 功能测试页
-// import lazeNotFound from 'bundle-loader?lazy&name=notfound!../notfound';// 404页
-// const Home = (props) => (<Bundle load={lazeHome}>{(Home) => <Home {...props} />}</Bundle>);
-// const Features = (props) => (<Bundle load={lazeFeatures}>{(Features) => <Features {...props} />}</Bundle>);
-// const Test = (props) => (<Bundle load={lazeTest}>{(Test) => <Test {...props} />}</Bundle>);
-// const NotFound = (props) => (<Bundle load={lazeNotFound}>{(NotFound) => <NotFound {...props} />}</Bundle>);
+import Bundle from '../a_component/bundle';                          // 异步加载高阶组件
+import lazeHome from 'bundle-loader?lazy&name=home!../a_container/home';            // 首页
+import lazeFeatures from 'bundle-loader?lazy&name=features!../a_container/features';// 说明页
+import lazeTest from 'bundle-loader?lazy&name=test!../a_container/test';            // 功能测试页
+import lazeNotFound from 'bundle-loader?lazy&name=notfound!../a_container/notfound';// 404页
+const Home = (props) => (<Bundle load={lazeHome}>{(Home) => <Home {...props} />}</Bundle>);
+const Features = (props) => (<Bundle load={lazeFeatures}>{(Features) => <Features {...props} />}</Bundle>);
+const Test = (props) => (<Bundle load={lazeTest}>{(Test) => <Test {...props} />}</Bundle>);
+const NotFound = (props) => (<Bundle load={lazeNotFound}>{(NotFound) => <NotFound {...props} />}</Bundle>);
 
 
 /** 下面是代码不分割的用法 **/
-import Home from '../a_container/home';
-import Features from '../a_container/features';
-import Test from '../a_container/test';
-import NotFound from '../a_container/notfound';
+// import Home from '../a_container/home';
+// import Features from '../a_container/features';
+// import Test from '../a_container/test';
+// import NotFound from '../a_container/notfound';
 
 /** 普通组件 **/
 import Menu from '../a_component/menu';
@@ -37,7 +37,7 @@ class RootContainer extends React.Component {
 
   /** 权限控制 **/
   onEnter(Component, props) {
-    console.log('权限控制：', props);
+    // console.log('权限控制：', props);
     // 例子：如果没有登录，直接跳转至login页
     // if (sessionStorage.getItem('userInfo')) {
     //   return <Component {...props} />;

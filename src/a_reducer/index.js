@@ -7,20 +7,22 @@
 // ============================================
 // Import modules
 
-import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import {combineReducers} from 'redux';
+import {routerReducer} from 'react-router-redux';
 
 // ============================================
 // Import app reducers
-import appReducer from './app-reducer';
+import home from './home';
+import test from './test';
 
 // ============================================
 // Combine
 const RootReducer = combineReducers({
-  // 注意一定要加上routing: routerReducer 这是用于redux和react-router的连接
-  routing: routerReducer,
-  // 其他自定义的reducer
-  app: appReducer, // 这里的命名，关系到container中取state对应的reducer的名字
+    // 注意一定要加上routing: routerReducer 这是用于redux和react-router的连接
+    routing: routerReducer,
+    // 其他自定义的reducer
+    home, // 这里的命名，关系到container中取state对应的reducer的名字
+    test
 });
 
 export default RootReducer;
